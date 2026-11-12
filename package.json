@@ -1,0 +1,72 @@
+{
+  "name": "dsh-file-export",
+  "version": "0.0.5",
+  "description": "DSH Web plugin for downloading files from the current workspace.",
+  "icon": "./assets/icon.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./assets/icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "assets/icon.svg",
+    "locale/*.json",
+    "README.md",
+    "docs/README.zh-CN.md",
+    "docs/download-preview.png",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "check:build": "npm run build && git diff --exit-code -- lib",
+    "deploy": "npm run check:build && npm pack --dry-run && npm stage publish --registry=https://registry.npmjs.org/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar-documentpreview",
+        "@deepseek-ai/dsh-api-workspace-files"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "workspace-files",
+    "download"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/feihua666/dsh-file-export.git"
+  },
+  "homepage": "https://github.com/feihua666/dsh-file-export#readme",
+  "bugs": {
+    "url": "https://github.com/feihua666/dsh-file-export/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

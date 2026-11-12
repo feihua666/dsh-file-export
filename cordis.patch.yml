@@ -1,0 +1,5 @@
+# The bundle layer makes the client feature visible to DSH's profile and
+# allows Settings -> Plugins to enable, disable, and remove it as one unit.
+- insert:
+    - id: dsh-file-export
+      name: dsh-file-export

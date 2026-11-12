@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "title": "File Download",
+    "description": "Download the current session's files from the document preview."
+  },
+  "view.download": "Download",
+  "view.downloading": "Downloading…",
+  "view.downloadNamed": "Download {name}",
+  "view.downloadError": "File download failed: {message}"
+}

@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "title": "文件下载",
+    "description": "在文件预览区域下载当前会话中的文件。"
+  },
+  "view.download": "下载",
+  "view.downloading": "下载中…",
+  "view.downloadNamed": "下载 {name}",
+  "view.downloadError": "文件下载失败：{message}"
+}
